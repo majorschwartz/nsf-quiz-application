@@ -3,13 +3,17 @@ import Result from "./Result";
 
 const Results = ({ scores }) => {
     return (
-        <div className="results-wrapper">
-            {scores.map((score, index) => {
-                return (
-                    <Result key={index} score={score} />
-                );
-            })}
-        </div>
+        <>
+            {scores.length > 0 ? (
+                <div className="results-wrapper">
+                    {scores.map((score, index) => {
+                        return (
+                            <Result key={index} score={score} />
+                        );
+                    })}
+                </div>
+            ): null}
+        </>
     );
 }
 
