@@ -2,7 +2,7 @@ import React from "react";
 
 import AnswerBox from "./AnswerBox";
 
-const QandA = ({ quiz, setQuiz, setFeedback, scores, setScores }) => {
+const QandA = ({ quiz, setQuiz, scores, setScores }) => {
     function checkAnswer(number) {
         console.log("Checking answer: " + number);
         

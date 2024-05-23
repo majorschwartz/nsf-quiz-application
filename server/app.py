@@ -51,7 +51,7 @@ def check_gpt(generated_text, topic, prev_questions):
     try:
         evaluated = False
         attempts = 0
-        while not evaluated and attempts < 5:
+        while not evaluated and attempts < 3:
             try:
                 print("Starting evaluation.")
 
@@ -105,8 +105,8 @@ def submit_data():
         topic = data.get('prompt', '')
         prev_questions = data.get('prev_questions', [])
 
-        if len(prev_questions) > 10:
-            prev_questions = prev_questions[len(prev_questions) - 10:]
+        if len(prev_questions) > 5:
+            prev_questions = prev_questions[len(prev_questions) - 5:]
         
         generated_text = prompt_gpt(topic, prev_questions)
 

@@ -23,7 +23,7 @@ const Feedback = ({ feedback }) => {
 
     return (
         <div>
-            {/* <p>Question 1: {question}</p> */}
+            <p>Question 1: {question}</p>
         </div>
     );
 };

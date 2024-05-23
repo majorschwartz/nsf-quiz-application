@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
+import Results from "./Results";
 import Topic from "./Topic";
 import QandA from "./QandA";
-import Feedback from "./Feedback";
 
 const Quiz = () => {
     const [scores, setScores] = useState([]);
@@ -19,20 +18,20 @@ const Quiz = () => {
         ],
         correct_answer: null,
     });
-    const [feedback, setFeedback] = useState("");
 
     return (
-        <div className="wrapper">
-            <Topic
-                topic={topic}
-                setTopic={setTopic}
-                setQuiz={setQuiz}
-                setFeedback={setFeedback}
-                prevQ={prevQ}
-                setPrevQ={setPrevQ}
-            />
-            <QandA quiz={quiz} setQuiz={setQuiz} setFeedback={setFeedback} scores={scores} setScores={setScores} />
-            <Feedback feedback={feedback} />
+        <div className="main-section">
+            <Results scores={scores} />
+            <div className="wrapper">
+                <Topic
+                    topic={topic}
+                    setTopic={setTopic}
+                    setQuiz={setQuiz}
+                    prevQ={prevQ}
+                    setPrevQ={setPrevQ}
+                />
+                <QandA quiz={quiz} setQuiz={setQuiz} scores={scores} setScores={setScores} />
+            </div>
         </div>
     );
 };
