@@ -7,14 +7,12 @@ const Results = ({ scores }) => {
             {scores.length > 0 ? (
                 <div className="results-wrapper">
                     {scores.map((score, index) => {
-                        return (
-                            <Result key={index} score={score} />
-                        );
+                        return <Result key={index} score={score} />;
                     })}
                 </div>
-            ): null}
+            ) : null}
         </>
     );
-}
+};
 
 export default Results;

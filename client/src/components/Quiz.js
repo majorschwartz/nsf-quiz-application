@@ -30,7 +30,12 @@ const Quiz = () => {
                     prevQ={prevQ}
                     setPrevQ={setPrevQ}
                 />
-                <QandA quiz={quiz} setQuiz={setQuiz} scores={scores} setScores={setScores} />
+                <QandA
+                    quiz={quiz}
+                    setQuiz={setQuiz}
+                    scores={scores}
+                    setScores={setScores}
+                />
             </div>
         </div>
     );

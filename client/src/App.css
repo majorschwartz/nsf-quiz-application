@@ -11,7 +11,7 @@ body,
     --secondary: rgb(235, 135, 135);
     --accent: rgb(234, 79, 79);
 
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: var(--text);
 }
 

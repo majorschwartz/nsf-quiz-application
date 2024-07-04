@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Feedback = ({ feedback }) => {
-    const [question, setQuestion] = useState('');
+    const [question, setQuestion] = useState("");
 
     // useEffect(() => {
     //     // Fetch the question from the server

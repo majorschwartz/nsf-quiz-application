@@ -5,10 +5,12 @@ import AnswerBox from "./AnswerBox";
 const QandA = ({ quiz, setQuiz, scores, setScores }) => {
     function checkAnswer(number) {
         console.log("Checking answer: " + number);
-        
+
         if (quiz.active) {
             const updatedQuiz = { ...quiz };
-            const anyAnswerClicked = updatedQuiz.answers.some(ans => ans.status === "correct" || ans.status === "incorrect");
+            const anyAnswerClicked = updatedQuiz.answers.some(
+                (ans) => ans.status === "correct" || ans.status === "incorrect"
+            );
 
             if (number === updatedQuiz.correct_answer) {
                 updatedQuiz.answers[number - 1].status = "correct";
