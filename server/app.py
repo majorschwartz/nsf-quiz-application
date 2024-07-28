@@ -14,7 +14,7 @@ CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"])
 # Set your OpenAI API key in the .env
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-gpt_model = "gpt-3.5-turbo-1106"
+gpt_model = "gpt-4o-mini"
 
 
 def prompt_gpt(topic, prev_questions):
