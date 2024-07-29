@@ -6,6 +6,9 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_cors import cross_origin
 from pymongo import MongoClient
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -15,7 +18,6 @@ CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"])
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 gpt_model = "gpt-4o-mini"
-
 
 def prompt_gpt(topic, prev_questions):
     pre_prompt = "You are a quiz bot. You will receive a topic and your task is to create an extremely super duper hard, in-depth, practically impossible question that's super obscure related to the topic and four possible answers for the user. Don't make the question about the definition of the topic. Avoid questions that are more than 100 words long. Only one answer should be correct and the other three should be wrong. Return a JSON object with the question key labeled as 'question', with the keys for answers 1 through 4 labeled 'a1', 'a2', 'a3', and 'a4' respectively, and the correct answer key labeled as 'correct_answer' with the value either being 1, 2, 3, or 4. Avoid questions that are more than 100 words long and answers that are more than 10 words long. Make the wrong answers related to the correct answer to try to trick the guesser.\n\n"
